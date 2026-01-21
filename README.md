@@ -69,17 +69,7 @@ astro-portfolio/
 └── tsconfig.json
 ```
 
-## Deployment
-
-This site is optimized for [Vercel](https://vercel.com):
-
-1. Push to GitHub
-2. Import project in Vercel
-3. Deploy automatically
-
-Vercel will auto-detect Astro and configure the build settings.
-
-### Other Platforms
+### Deployment
 
 The build outputs static files to `./dist/`. Deploy to any static host:
 
