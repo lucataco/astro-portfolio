@@ -1,0 +1,116 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Luis D Catacora",
+  description = "Computer Engineer who likes to tinker and hack things",
+} = Astro.props;
+
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>{title}</title>
+
+    <!-- Custom Analytics (data.lucataco.dev) -->
+    <script
+      defer
+      src="https://data.lucataco.dev/script.js"
+      data-website-id="b19756e5-9bc2-4f91-8b77-3ca7274c59be"
+    ></script>
+  </head>
+  <body>
+    <div class="app">
+      <main class="main-info">
+        <slot />
+      </main>
+      <footer class="footer">
+        <p>
+          &copy; {currentYear}
+          <a href="https://catacolabs.com" target="_blank" rel="noreferrer">
+            CatacoLabs
+          </a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Vercel Analytics -->
+    <script>
+      import { inject } from "@vercel/analytics";
+      inject();
+    </script>
+  </body>
+</html>
+
+<style>
+  :global(*) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :global(body) {
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      "Roboto",
+      "Oxygen",
+      "Ubuntu",
+      "Cantarell",
+      "Fira Sans",
+      "Droid Sans",
+      "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :global(a) {
+    color: gray;
+    text-decoration: none;
+  }
+
+  :global(a:hover) {
+    color: gray;
+  }
+
+  .app {
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .main-info {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    font-size: 14px;
+    color: gray;
+  }
+</style>
