@@ -7,7 +7,6 @@ A minimal, fast personal portfolio website built with [Astro](https://astro.buil
 ## Tech Stack
 
 - **[Astro](https://astro.build)** - Static site generator
-- **[@vercel/analytics](https://vercel.com/analytics)** - Web analytics
 - **Zero JavaScript** - Ships only HTML/CSS (except analytics)
 
 ## Getting Started
