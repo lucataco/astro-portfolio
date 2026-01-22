@@ -1,3 +1,8 @@
+# agents
+.agents/
+.cursor/
+.opencode/
+
 # build output
 dist/
 .astro/
