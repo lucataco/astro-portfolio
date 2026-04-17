@@ -34,12 +34,15 @@ A minimal, single-page personal portfolio website for Luis D Catacora. Built wit
 
 ```
 astro-portfolio/
+├── functions/
+│   └── _middleware.ts        # Cloudflare Pages middleware: Link header + Accept: text/markdown negotiation
 ├── public/                    # Static assets (copied as-is to build)
 │   ├── .well-known/
 │   │   └── agent-skills/
 │   │       ├── index.json   # Agent Skills discovery index (v0.2.0)
 │   │       └── contact/
 │   │           └── SKILL.md # Contact/identity skill
+│   ├── _headers              # Cloudflare Pages header rules (Link, Content-Type)
 │   ├── favicon.png           # Site favicon
 │   ├── index.md              # Markdown representation of the homepage
 │   ├── manifest.json         # PWA manifest
@@ -61,9 +64,10 @@ astro-portfolio/
 ├── astro.config.mjs          # Astro configuration (site + sitemap integration)
 ├── package.json              # Dependencies and scripts
 ├── tsconfig.json             # TypeScript configuration
-├── vercel.json               # Link headers + Accept: text/markdown rewrite
 └── AGENTS.md                 # This file
 ```
+
+> Hosting note: this project is deployed on **Cloudflare Pages** (project name: `astro-portfolio`). The `_headers` file and `functions/_middleware.ts` are Cloudflare-Pages-native; there is no Vercel or Netlify config in this repo.
 
 ---
 
