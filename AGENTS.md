@@ -35,10 +35,18 @@ A minimal, single-page personal portfolio website for Luis D Catacora. Built wit
 ```
 astro-portfolio/
 ├── public/                    # Static assets (copied as-is to build)
+│   ├── .well-known/
+│   │   └── agent-skills/
+│   │       ├── index.json   # Agent Skills discovery index (v0.2.0)
+│   │       └── contact/
+│   │           └── SKILL.md # Contact/identity skill
 │   ├── favicon.png           # Site favicon
+│   ├── index.md              # Markdown representation of the homepage
 │   ├── manifest.json         # PWA manifest
 │   ├── resume.pdf            # Downloadable resume
-│   └── robots.txt            # SEO robots configuration
+│   └── robots.txt            # SEO robots configuration + Sitemap directive
+├── scripts/
+│   └── update-skills-index.mjs # Prebuild: refresh SKILL.md sha256 digests
 ├── src/
 │   ├── assets/
 │   │   └── images/
@@ -50,9 +58,10 @@ astro-portfolio/
 │   │   └── Layout.astro      # Base HTML layout with analytics
 │   └── pages/
 │       └── index.astro       # Home page (entry point)
-├── astro.config.mjs          # Astro configuration
+├── astro.config.mjs          # Astro configuration (site + sitemap integration)
 ├── package.json              # Dependencies and scripts
 ├── tsconfig.json             # TypeScript configuration
+├── vercel.json               # Link headers + Accept: text/markdown rewrite
 └── AGENTS.md                 # This file
 ```
 

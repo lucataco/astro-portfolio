@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "contact",
+      "type": "skill-md",
+      "description": "Canonical contact information, social profiles, and resume link for Luis D Catacora.",
+      "url": "https://lucataco.com/.well-known/agent-skills/contact/SKILL.md",
+      "digest": "sha256:f30c01bf03b02d437573ca078c0f97f10b6785df50d7acfd8a9fc71ea800225a"
+    }
+  ]
+}
